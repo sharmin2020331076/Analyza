@@ -121,7 +121,7 @@ const Upload = () => {
     }
 
     return (
-        <main className="relative min-h-screen">
+        <main className="relative min-h-screen pt-32">
             {/* Background Elements */}
             <div className="fixed inset-0 z-0 pointer-events-none">
                 <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px]" />

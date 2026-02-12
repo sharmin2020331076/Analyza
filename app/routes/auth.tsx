@@ -19,7 +19,7 @@ const Auth = () => {
     }, [isLoading, auth.isAuthenticated, next, navigate])
 
     return (
-        <main className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <main className="relative min-h-screen flex items-center justify-center px-6 pt-32 overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute top-[-20%] right-[-10%] w-[70%] h-[70%] bg-primary/10 rounded-full blur-[120px] animate-pulse" />

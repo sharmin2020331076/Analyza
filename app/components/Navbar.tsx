@@ -12,10 +12,31 @@ const Navbar = () => {
                 </Link>
 
                 <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-                    <Link to="/#features" className="text-text-secondary hover:text-white transition-colors">Features</Link>
-                    <Link to="/#how-it-works" className="text-text-secondary hover:text-white transition-colors">How it Works</Link>
-                    <Link to="/pricing" className="text-text-secondary hover:text-white transition-colors">Pricing</Link>
-                    <Link to="/contact" className="text-text-secondary hover:text-white transition-colors">Contact</Link>
+                    <button 
+                        onClick={() => {
+                            if (isLanding) {
+                                document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+                            } else {
+                                window.location.href = '/#features';
+                            }
+                        }}
+                        className="text-slate-300 hover:text-white transition-colors cursor-pointer"
+                    >
+                        Features
+                    </button>
+                    <button 
+                        onClick={() => {
+                            if (isLanding) {
+                                document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
+                            } else {
+                                window.location.href = '/#how-it-works';
+                            }
+                        }}
+                        className="text-slate-300 hover:text-white transition-colors cursor-pointer"
+                    >
+                        How it Works
+                    </button>
+                    <Link to="/dashboard" className="text-slate-300 hover:text-white transition-colors">Dashboard</Link>
                 </div>
 
                 <div className="flex items-center gap-4">

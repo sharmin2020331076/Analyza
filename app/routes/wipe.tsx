@@ -44,7 +44,7 @@ const WipeApp = () => {
     }
 
     return (
-        <div className="min-h-screen bg-bg-dark text-white flex flex-col items-center justify-center gap-8 p-8">
+        <div className="min-h-screen bg-bg-dark text-white flex flex-col items-center justify-center gap-8 p-8 pt-32">
             <h1 className="text-3xl font-bold text-red-500">Wipe App Data</h1>
             
             <div className="bg-bg-card border border-white/10 rounded-xl p-6 w-full max-w-lg">

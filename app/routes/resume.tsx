@@ -70,7 +70,7 @@ const Resume = () => {
 
     if (error) {
         return (
-            <main className="!pt-0 relative min-h-screen flex flex-col items-center justify-center">
+            <main className="!pt-32 relative min-h-screen flex flex-col items-center justify-center">
                 <div className="bg-bg-card p-8 rounded-2xl border border-red-500/20 shadow-2xl max-w-md w-full text-center">
                     <div className="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                         <img src="/icons/warning.svg" className="w-8 h-8 opacity-80" />
@@ -84,18 +84,7 @@ const Resume = () => {
     }
 
     return (
-        <main className="!pt-0 relative min-h-screen flex flex-col">
-            <nav className="sticky top-0 z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/10 px-8 py-4 flex items-center justify-between">
-                <Link to="/" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors group">
-                    <div className="p-2 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
-                        <img src="/icons/back.svg" alt="back" className="w-4 h-4 invert opacity-70 group-hover:opacity-100" />
-                    </div>
-                    <span className="font-medium">Back to Dashboard</span>
-                </Link>
-                <div className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">
-                    Analyza
-                </div>
-            </nav>
+        <main className="min-h-screen flex flex-col bg-bg-dark pt-20">
 
             <div className="flex flex-col lg:flex-row flex-1 h-[calc(100vh-73px)] overflow-hidden">
                 {/* Left Side: Resume Preview */}

@@ -34,7 +34,7 @@ body {
 }
 
 main {
-  @apply min-h-screen pt-20 px-4 max-w-[1400px] mx-auto relative z-10;
+  @apply min-h-screen relative z-10;
 }
 
 /* Removed global h1 style to allow per-component text sizing with Tailwind */
