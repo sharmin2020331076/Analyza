@@ -225,7 +225,7 @@ export const AIResponseFormat = `
       };
     }`;
 
-export const prepareInstructions = ({jobTitle, jobDescription}: { jobTitle: string; jobDescription: string; }) =>
+export const prepareInstructions = ({ jobTitle, jobDescription }: { jobTitle: string; jobDescription: string; }) =>
     `You are an expert in ATS (Applicant Tracking System) and resume analysis.
       Please analyze and rate this resume and suggest how to improve it.
       The rating can be low if the resume is bad.
@@ -235,7 +235,7 @@ export const prepareInstructions = ({jobTitle, jobDescription}: { jobTitle: stri
       If provided, take the job description into consideration.
       The job title is: ${jobTitle}
       The job description is: ${jobDescription}
-      Provide the feedback using the following format:
+      Provide the feedback STRICTLY as a valid JSON object.
       ${AIResponseFormat}
-      Return the analysis as an JSON object, without any other text and without the backticks.
-      Do not include any other text or comments.`;
+      IMPORTANT: Return ONLY the raw JSON string. Do not use markdown code blocks. Do not include any introductory or concluding text. 
+      If you cannot analyze the resume, return a JSON with empty fields and specific tips explaining why.`;

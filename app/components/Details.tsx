@@ -10,27 +10,28 @@ const ScoreBadge = ({ score }: { score: number }) => {
   return (
       <div
           className={cn(
-              "flex flex-row gap-1 items-center px-2 py-0.5 rounded-[96px]",
+              "flex flex-row gap-1 items-center px-3 py-1 rounded-full border",
               score > 69
-                  ? "bg-badge-green"
+                  ? "bg-green-500/10 border-green-500/20"
                   : score > 39
-                      ? "bg-badge-yellow"
-                      : "bg-badge-red"
+                      ? "bg-yellow-500/10 border-yellow-500/20"
+                      : "bg-red-500/10 border-red-500/20"
           )}
       >
         <img
             src={score > 69 ? "/icons/check.svg" : "/icons/warning.svg"}
             alt="score"
-            className="size-4"
+            className="size-4 opacity-80"
+             style={{ filter: score > 69 ? "sepia(1) hue-rotate(90deg) saturate(300%)" : "sepia(1) hue-rotate(0deg) saturate(300%)" }}
         />
         <p
             className={cn(
-                "text-sm font-medium",
+                "text-xs font-semibold",
                 score > 69
-                    ? "text-badge-green-text"
+                    ? "text-green-400"
                     : score > 39
-                        ? "text-badge-yellow-text"
-                        : "text-badge-red-text"
+                        ? "text-yellow-400"
+                        : "text-red-400"
             )}
         >
           {score}/100
@@ -47,8 +48,8 @@ const CategoryHeader = ({
   categoryScore: number;
 }) => {
   return (
-      <div className="flex flex-row gap-4 items-center py-2">
-        <p className="text-2xl font-semibold">{title}</p>
+      <div className="flex flex-row gap-4 items-center py-2 w-full justify-between">
+        <p className="text-xl font-medium text-white">{title}</p>
         <ScoreBadge score={categoryScore} />
       </div>
   );
@@ -60,18 +61,19 @@ const CategoryContent = ({
   tips: { type: "good" | "improve"; tip: string; explanation: string }[];
 }) => {
   return (
-      <div className="flex flex-col gap-4 items-center w-full">
-        <div className="bg-gray-50 w-full rounded-lg px-5 py-4 grid grid-cols-2 gap-4">
+      <div className="flex flex-col gap-4 items-center w-full pt-2 pb-6">
+        <div className="bg-white/5 w-full rounded-xl px-5 py-4 grid grid-cols-1 md:grid-cols-2 gap-4 border border-white/5">
           {tips.map((tip, index) => (
-              <div className="flex flex-row gap-2 items-center" key={index}>
+              <div className="flex flex-row gap-3 items-start" key={index}>
                 <img
                     src={
                       tip.type === "good" ? "/icons/check.svg" : "/icons/warning.svg"
                     }
                     alt="score"
-                    className="size-5"
+                    className="size-5 mt-0.5 opacity-80"
+                     style={{ filter: tip.type === "good" ? "sepia(1) hue-rotate(90deg) saturate(300%)" : "sepia(1) hue-rotate(0deg) saturate(300%)" }}
                 />
-                <p className="text-xl text-gray-500 ">{tip.tip}</p>
+                <p className="text-base text-text-secondary leading-snug">{tip.tip}</p>
               </div>
           ))}
         </div>
@@ -80,13 +82,13 @@ const CategoryContent = ({
               <div
                   key={index + tip.tip}
                   className={cn(
-                      "flex flex-col gap-2 rounded-2xl p-4",
+                      "flex flex-col gap-2 rounded-2xl p-5 border",
                       tip.type === "good"
-                          ? "bg-green-50 border border-green-200 text-green-700"
-                          : "bg-yellow-50 border border-yellow-200 text-yellow-700"
+                          ? "bg-green-500/5 border-green-500/10 text-green-300"
+                          : "bg-yellow-500/5 border-yellow-500/10 text-yellow-300"
                   )}
               >
-                <div className="flex flex-row gap-2 items-center">
+                <div className="flex flex-row gap-3 items-center">
                   <img
                       src={
                         tip.type === "good"
@@ -94,11 +96,12 @@ const CategoryContent = ({
                             : "/icons/warning.svg"
                       }
                       alt="score"
-                      className="size-5"
+                     className="size-5 opacity-80"
+                     style={{ filter: tip.type === "good" ? "sepia(1) hue-rotate(90deg) saturate(300%)" : "sepia(1) hue-rotate(0deg) saturate(300%)" }}
                   />
-                  <p className="text-xl font-semibold">{tip.tip}</p>
+                  <p className="text-lg font-semibold">{tip.tip}</p>
                 </div>
-                <p>{tip.explanation}</p>
+                <p className="text-text-secondary pl-8 text-sm leading-relaxed opacity-90">{tip.explanation}</p>
               </div>
           ))}
         </div>

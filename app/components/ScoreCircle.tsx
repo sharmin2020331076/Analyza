@@ -19,15 +19,15 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
                     cx="50"
                     cy="50"
                     r={normalizedRadius}
-                    stroke="#e5e7eb"
+                    stroke="#1e293b"
                     strokeWidth={stroke}
                     fill="transparent"
                 />
                 {/* Partial circle with gradient */}
                 <defs>
                     <linearGradient id="grad" x1="1" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#FF97AD" />
-                        <stop offset="100%" stopColor="#5171FF" />
+                        <stop offset="0%" stopColor="#3b82f6" />
+                        <stop offset="100%" stopColor="#8b5cf6" />
                     </linearGradient>
                 </defs>
                 <circle
