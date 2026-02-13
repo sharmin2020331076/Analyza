@@ -50,9 +50,6 @@ const Navbar = () => {
                 <div className="flex items-center gap-4">
                     {auth.isAuthenticated ? (
                         <>
-                            <Link to="/upload" className="px-6 py-2.5 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full shadow-lg hover:shadow-primary/30 transition-all">
-                                Upload Resume
-                            </Link>
                             <button
                                 onClick={handleLogout}
                                 className="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full transition-all"
