@@ -50,6 +50,7 @@ const Navbar = () => {
                 <div className="flex items-center gap-4">
                     {auth.isAuthenticated ? (
                         <>
+                            
                             <button
                                 onClick={handleLogout}
                                 className="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full transition-all"

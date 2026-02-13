@@ -60,6 +60,7 @@ export default function Dashboard() {
             </motion.h1>
 
             <motion.div
+            className="flex flex-col gap-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -68,7 +69,11 @@ export default function Dashboard() {
                 <h2 className="text-xl md:text-2xl text-text-secondary font-medium">To get started, upload your first resume for AI-powered feedback.</h2>
               ) : (
                 <h2 className="text-xl md:text-2xl text-text-secondary font-medium">Review your submissions and improve your ATS score.</h2>
+                
               )}
+              <Link to="/upload" className="max-w-sm mx-auto px-6 py-2.5 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full shadow-lg hover:shadow-primary/30 transition-all">
+                                Upload Resume
+                            </Link>
             </motion.div>
           </div>
 
