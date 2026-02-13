@@ -35,7 +35,7 @@ const Auth = () => {
                 <div className="bg-bg-card/60 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col items-center text-center gap-8">
                     <div className="space-y-4">
                         <div className="inline-flex items-center justify-center p-4 bg-white/5 rounded-2xl mb-4 border border-white/5 shadow-inner">
-                            <img src="/logo-dark.svg" alt="Analyza Logo" className="w-12 h-12 invert opacity-90" />
+                            <img src="/logo.png" alt="Analyza Logo" className="w-12 h-12 invert opacity-90" />
                         </div>
                         <h1 className="text-3xl font-bold text-white">Welcome Back</h1>
                         <p className="text-text-secondary text-lg">
