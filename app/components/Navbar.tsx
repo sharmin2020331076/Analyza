@@ -1,8 +1,16 @@
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
+import { usePuterStore } from "~/lib/puter";
 
 const Navbar = () => {
     const location = useLocation();
+    const navigate = useNavigate();
+    const { auth } = usePuterStore();
     const isLanding = location.pathname === "/";
+
+    const handleLogout = async () => {
+        await auth.signOut();
+        navigate('/');
+    }
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-bg-dark/80 border-b border-purple-500/10">
@@ -40,13 +48,21 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    {isLanding ? (
+                    {auth.isAuthenticated ? (
+                        <>
+                            <Link to="/upload" className="px-6 py-2.5 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full shadow-lg hover:shadow-primary/30 transition-all">
+                                Upload Resume
+                            </Link>
+                            <button
+                                onClick={handleLogout}
+                                className="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full transition-all"
+                            >
+                                Sign Out
+                            </button>
+                        </>
+                    ) : (
                         <Link to="/auth" className="px-6 py-2.5 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full shadow-lg hover:shadow-primary/30 transition-all">
                             Get started
-                        </Link>
-                    ) : (
-                        <Link to="/upload" className="px-6 py-2.5 bg-primary hover:bg-primary-hover text-white font-semibold rounded-full shadow-lg hover:shadow-primary/30 transition-all">
-                            Upload Resume
                         </Link>
                     )}
                 </div>
