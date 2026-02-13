@@ -15,6 +15,7 @@ import SmoothScroll from "~/components/SmoothScroll";
 import Navbar from "~/components/Navbar";
 
 export const links: Route.LinksFunction = () => [
+  { rel: "icon", href: "/intelligence.png", type: "image/png" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
